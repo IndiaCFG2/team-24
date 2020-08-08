@@ -19,3 +19,12 @@ class SchoolCPD(models.Model):
 	total_students=models.CharField(max_length=100)
 	date=models.CharField(max_length=100)
 	count=models.IntegerField()
+
+class chart(models.Model):
+	id =models.AutoField(primary_key=True)
+	school_name=models.CharField(max_length=100)
+	board=models.CharField(max_length=100)
+	total_clicks=models.IntegerField()
+	day=models.IntegerField()
+	count=models.IntegerField()
+
