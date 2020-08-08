@@ -36,6 +36,7 @@ def getDailyForCurriculum():
 	rows = cur.fetchall()
 	return rows	
 
+<<<<<<< HEAD
 @app.rote('/getMonthlyForCurriculum',methods = ['GET'])
 def getMonthlyForCurriculum():
 	board = request['board']
@@ -49,6 +50,24 @@ def getClicksForCurriculum():
 	board=['board']
 	cur=con.cursor()
 	cur.execute("SELEC")
+=======
+@app.route('/getMonthlyForCurriculum',methods=["GET"])
+def getMonthlyForCurriculum():
+	board=request['board']
+	cur=con.cursor()
+	cur.execute("SELECT ")
+	rows=cur.fetchall()
+	return rows
+
+@app.route('/getClicksForCurriculum',methods=["GET"])
+def getClicksForCurriculum():
+	board=request['board']
+	cur=con.cursor()
+	cur.execute("SELECT ")
+	rows=cur.fetchall()
+	return rows
+
+>>>>>>> 8445aec9d1fc13d1695360619daeed98200538ef
 
 def getCityForCurriculum()
 
