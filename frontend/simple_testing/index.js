@@ -11,13 +11,13 @@ func = (url) => {
 	// pass schoolid to database, get curriculum var
 	// for now for testing index.html?schoolid=CBSE etc
 	var curriculum = "";
-	if (params.schoolid === 'CBSE') {
+	if (params.schoolid === 'cbse') {
 		document.getElementById('CBSE').style.display = "block";
 	}
-	else if (params.schoolid === 'KTAKA') {
+	else if (params.schoolid === 'ktaka') {
 		document.getElementById('KTAKA').style.display = "block";
 	}
-	else if (params.schoolid === 'TS') {
+	else if (params.schoolid === 'ts') {
 		document.getElementById('TS').style.display = "block";
 	}
 	else {
