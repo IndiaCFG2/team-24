@@ -18,7 +18,12 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
     <!-- Custom styles for this template -->
-    <link href="starter-template.css" rel="stylesheet">
+    <!--<link href="starter-template.css" rel="stylesheet">-->
+    <style>
+    .card{
+      background-color : #17a2b8;
+    }
+    </style>
   </head>
 
   <body>
@@ -55,9 +60,40 @@
       <h2>CBSE Curriculum</h2>
       <div class="album py-5 bg-light">
         <div class="row">
-           <div class="col-md-3" style="align-items: center">
+           <div class="col-md-3 blue" style="align-items: center">
               <div class="card mb-4 box-shadow" style="align-items: center ">
-                <img class="card-img-top hello" src="./static/grade1.jpg" style="height: 200px; width: 100%; display: block;"data-holder-rendered="true">
+                <img class="card-img-top img-rounded" src="./static/grade1.jpg" style="height: 200px; width: 100%; display: block; border-radius:25px"data-holder-rendered="true">
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card mb-4 box-shadow"style="align-items: center" >
+                <img  class="card-img-top img-rounded" src="./static/english.jpg" style="height: 150px; width: 100%; display: block;" src="" data-holder-rendered="true">
+                <div class="card-body">
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button id='g1e' type="button" class="btn btn-sm btn-outline-secondary" onclick='ge1()'>View</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card mb-4 box-shadow" style="align-items: center">
+                <img class="card-img-top img-rounded" src="./static/maths.jpg" style="height: 150px; width: 100%; display: block;" src="" data-holder-rendered="true">
+                <div class="card-body">
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+           <div class="col-md-3" style="align-items: center">
+              <div class="card mb-4 box-shadow" style="align-items: center">
+                <img class="card-img-top img-rounded" src="./static/grade2.jpg" style="height: 200px; width: 100%; display: block;border-radius:25px" src="" data-holder-rendered="true">
               </div>
             </div>
             <div class="col-md-3">
@@ -66,7 +102,7 @@
                 <div class="card-body">
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary" onclick=>View</button>
+                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
                     </div>
                   </div>
                 </div>
@@ -74,7 +110,7 @@
             </div>
             <div class="col-md-3">
               <div class="card mb-4 box-shadow" style="align-items: center">
-                <img class="card-img-top" src="./static/maths.jpg" style="height: 150px; width: 100%; display: block;" src="" data-holder-rendered="true">
+                <img class="card-img-top img-rounded" src="./static/maths.jpg" style="height: 150px; width: 100%; display: block;" src="" data-holder-rendered="true">
                 <div class="card-body">
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
@@ -88,38 +124,7 @@
           <div class="row">
            <div class="col-md-3" style="align-items: center">
               <div class="card mb-4 box-shadow" style="align-items: center">
-                <img class="card-img-top" src="./static/grade2.jpg" style="height: 200px; width: 100%; display: block;" src="" data-holder-rendered="true">
-              </div>
-            </div>
-            <div class="col-md-3">
-              <div class="card mb-4 box-shadow"style="align-items: center">
-                <img class="card-img-top" src="./static/english.jpg" style="height: 150px; width: 100%; display: block;" src="" data-holder-rendered="true">
-                <div class="card-body">
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3">
-              <div class="card mb-4 box-shadow" style="align-items: center">
-                <img class="card-img-top" src="./static/maths.jpg" style="height: 150px; width: 100%; display: block;" src="" data-holder-rendered="true">
-                <div class="card-body">
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-           <div class="col-md-3" style="align-items: center">
-              <div class="card mb-4 box-shadow" style="align-items: center">
-                <img class="card-img-top" src="./static/grade3.jpg" style="height: 200px; width: 100%; display: block;" src="" data-holder-rendered="true">
+                <img class="card-img-top img-rounded" src="./static/grade3.jpg" style="height: 200px; width: 100%; display: block;border-radius:25px" src="" data-holder-rendered="true">
               </div>
             </div>
             <div class="col-md-3">
@@ -162,7 +167,7 @@
           <div class="row">
            <div class="col-md-3" style="align-items: center">
               <div class="card mb-4 box-shadow" style="align-items: center">
-                <img class="card-img-top" src="./static/grade4.jpg" style="height: 200px; width: 100%; display: block;" src="" data-holder-rendered="true">
+                <img class="card-img-top" src="./static/grade4.jpg" style="height: 200px; width: 100%; display: block;border-radius:25px" src="" data-holder-rendered="true">
               </div>
             </div>
             <div class="col-md-3">
@@ -205,7 +210,7 @@
           <div class="row">
            <div class="col-md-3" style="align-items: center">
               <div class="card mb-4 box-shadow" style="align-items: center">
-                <img class="card-img-top" src="./static/grade5.jpg" style="height: 200px; width: 100%; display: block;" src="" data-holder-rendered="true">
+                <img class="card-img-top" src="./static/grade5.jpg" style="height: 200px; width: 100%; display: block;border-radius:25px" src="" data-holder-rendered="true">
               </div>
             </div>
             <div class="col-md-3">
@@ -254,7 +259,7 @@
         <div class="row">
            <div class="col-md-3" style="align-items: center">
               <div class="card mb-4 box-shadow" style="align-items: center ">
-                <img class="card-img-top" src="./static/grade1.jpg" style="height: 200px; width: 100%; display: block;" src="" data-holder-rendered="true">
+                <img class="card-img-top" src="./static/grade1.jpg" style="height: 200px; width: 100%; display: block;border-radius:25px" src="" data-holder-rendered="true">
               </div>
             </div>
             <div class="col-md-3">
@@ -285,7 +290,7 @@
           <div class="row">
            <div class="col-md-3" style="align-items: center">
               <div class="card mb-4 box-shadow" style="align-items: center">
-                <img class="card-img-top" src="./static/grade2.jpg" style="height: 200px; width: 100%; display: block;" src="" data-holder-rendered="true">
+                <img class="card-img-top" src="./static/grade2.jpg" style="height: 200px; width: 100%; display: block;border-radius:25px" src="" data-holder-rendered="true">
               </div>
             </div>
             <div class="col-md-3">
@@ -316,50 +321,7 @@
           <div class="row">
            <div class="col-md-3" style="align-items: center">
               <div class="card mb-4 box-shadow" style="align-items: center">
-                <img class="card-img-top" src="./static/grade3.jpg" style="height: 200px; width: 100%; display: block;" src="" data-holder-rendered="true">
-              </div>
-            </div>
-            <div class="col-md-3">
-              <div class="card mb-4 box-shadow"style="align-items: center">
-                <img class="card-img-top" src="./static/english.jpg" style="height: 150px; width: 100%; display: block;" src="" data-holder-rendered="true">
-                <div class="card-body">
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3">
-              <div class="card mb-4 box-shadow">
-                <img class="card-img-top" src="./static/maths.jpg" style="height: 150px; width: 100%; display: block;" src="" data-holder-rendered="true">
-                <div class="card-body">
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3">
-              <div class="card mb-4 box-shadow"style="align-items: center">
-                <img class="card-img-top" src="./static/evs.jpg" style="height: 150px; width: 100%; display: block;" src="" data-holder-rendered="true">
-                <div class="card-body">
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-           <div class="col-md-3" style="align-items: center">
-              <div class="card mb-4 box-shadow" style="align-items: center">
-                <img class="card-img-top" src="./static/grade4.jpg" style="height: 200px; width: 100%; display: block;" src="" data-holder-rendered="true">
+                <img class="card-img-top" src="./static/grade3.jpg" style="height: 200px; width: 100%; display: block;border-radius:25px" src="" data-holder-rendered="true">
               </div>
             </div>
             <div class="col-md-3">
@@ -402,7 +364,50 @@
           <div class="row">
            <div class="col-md-3" style="align-items: center">
               <div class="card mb-4 box-shadow" style="align-items: center">
-                <img class="card-img-top" src="./static/grade5.jpg" style="height: 200px; width: 100%; display: block;" src="" data-holder-rendered="true">
+                <img class="card-img-top" src="./static/grade4.jpg" style="height: 200px; width: 100%; display: block;border-radius:25px" src="" data-holder-rendered="true">
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card mb-4 box-shadow"style="align-items: center">
+                <img class="card-img-top" src="./static/english.jpg" style="height: 150px; width: 100%; display: block;" src="" data-holder-rendered="true">
+                <div class="card-body">
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card mb-4 box-shadow">
+                <img class="card-img-top" src="./static/maths.jpg" style="height: 150px; width: 100%; display: block;" src="" data-holder-rendered="true">
+                <div class="card-body">
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card mb-4 box-shadow"style="align-items: center">
+                <img class="card-img-top" src="./static/evs.jpg" style="height: 150px; width: 100%; display: block;" src="" data-holder-rendered="true">
+                <div class="card-body">
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+           <div class="col-md-3" style="align-items: center">
+              <div class="card mb-4 box-shadow" style="align-items: center">
+                <img class="card-img-top" src="./static/grade5.jpg" style="height: 200px; width: 100%; display: block;border-radius:25px" src="" data-holder-rendered="true">
               </div>
             </div>
             <div class="col-md-3">
@@ -453,7 +458,7 @@
         <div class="row">
            <div class="col-md-3" style="align-items: center">
               <div class="card mb-4 box-shadow" style="align-items: center ">
-                <img class="card-img-top" src="./static/grade1.jpg" style="height: 200px; width: 100%; display: block;" src="" data-holder-rendered="true">
+                <img class="card-img-top" src="./static/grade1.jpg" style="height: 200px; width: 100%; display: block;border-radius:25px" src="" data-holder-rendered="true">
               </div>
             </div>
             <div class="col-md-3">
@@ -484,7 +489,7 @@
           <div class="row">
            <div class="col-md-3" style="align-items: center">
               <div class="card mb-4 box-shadow" style="align-items: center">
-                <img class="card-img-top" src="./static/grade2.jpg" style="height: 200px; width: 100%; display: block;" src="" data-holder-rendered="true">
+                <img class="card-img-top" src="./static/grade2.jpg" style="height: 200px; width: 100%; display: block;border-radius:25px" src="" data-holder-rendered="true">
               </div>
             </div>
             <div class="col-md-3">
@@ -515,50 +520,7 @@
           <div class="row">
            <div class="col-md-3" style="align-items: center">
               <div class="card mb-4 box-shadow" style="align-items: center">
-                <img class="card-img-top" src="./static/grade3.jpg" style="height: 200px; width: 100%; display: block;" src="" data-holder-rendered="true">
-              </div>
-            </div>
-            <div class="col-md-3">
-              <div class="card mb-4 box-shadow"style="align-items: center">
-                <img class="card-img-top" src="./static/english.jpg" style="height: 150px; width: 100%; display: block;" src="" data-holder-rendered="true">
-                <div class="card-body">
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3">
-              <div class="card mb-4 box-shadow">
-                <img class="card-img-top" src="./static/maths.jpg" style="height: 150px; width: 100%; display: block;" src="" data-holder-rendered="true">
-                <div class="card-body">
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3">
-              <div class="card mb-4 box-shadow"style="align-items: center">
-                <img class="card-img-top" src="./static/evs.jpg" style="height: 150px; width: 100%; display: block;" src="" data-holder-rendered="true">
-                <div class="card-body">
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-           <div class="col-md-3" style="align-items: center">
-              <div class="card mb-4 box-shadow" style="align-items: center">
-                <img class="card-img-top" src="./static/grade4.jpg" style="height: 200px; width: 100%; display: block;" src="" data-holder-rendered="true">
+                <img class="card-img-top" src="./static/grade3.jpg" style="height: 200px; width: 100%; display: block;border-radius:25px" src="" data-holder-rendered="true">
               </div>
             </div>
             <div class="col-md-3">
@@ -601,7 +563,50 @@
           <div class="row">
            <div class="col-md-3" style="align-items: center">
               <div class="card mb-4 box-shadow" style="align-items: center">
-                <img class="card-img-top" src="./static/grade5.jpg" style="height: 200px; width: 100%; display: block;" src="" data-holder-rendered="true">
+                <img class="card-img-top" src="./static/grade4.jpg" style="height: 200px; width: 100%; display: block;border-radius:25px" src="" data-holder-rendered="true">
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card mb-4 box-shadow"style="align-items: center">
+                <img class="card-img-top" src="./static/english.jpg" style="height: 150px; width: 100%; display: block;" src="" data-holder-rendered="true">
+                <div class="card-body">
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card mb-4 box-shadow">
+                <img class="card-img-top" src="./static/maths.jpg" style="height: 150px; width: 100%; display: block;" src="" data-holder-rendered="true">
+                <div class="card-body">
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card mb-4 box-shadow"style="align-items: center">
+                <img class="card-img-top" src="./static/evs.jpg" style="height: 150px; width: 100%; display: block;" src="" data-holder-rendered="true">
+                <div class="card-body">
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+           <div class="col-md-3" style="align-items: center">
+              <div class="card mb-4 box-shadow" style="align-items: center">
+                <img class="card-img-top" src="./static/grade5.jpg" style="height: 200px; width: 100%; display: block;border-radius:25px" src="" data-holder-rendered="true">
               </div>
             </div>
             <div class="col-md-3">
@@ -651,9 +656,9 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <!--<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
     <script src="../../assets/js/vendor/popper.min.js"></script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>-->
 
   </body>
 </html>
