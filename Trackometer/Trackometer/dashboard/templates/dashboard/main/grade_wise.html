@@ -9,6 +9,8 @@ Coded by Creative Tim
 
 =========================================================
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. -->
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -48,13 +50,13 @@ The above copyright notice and this permission notice shall be included in all c
         </a></div>
       <div class="sidebar-wrapper">
         <ul class="nav">
-          <li class="nav-item active  ">
+          <li class="nav-item ">
             <a class="nav-link" href="./dashboard.html">
               <i class="material-icons">dashboard</i>
               <p>Curriculum and School</p>
             </a>
           </li>
-          <li class="nav-item ">
+          <li class="nav-item active">
             <a class="nav-link" href="./grade_wise.html">
               <i class="material-icons">dashboard</i>
               <p>Grade and Subject</p>
@@ -173,7 +175,19 @@ The above copyright notice and this permission notice shall be included in all c
               </div>
             </div>
             <div class="col-lg-3 col-md-6 col-sm-6">  
-              <p> SELECT SCHOOL </p>
+                SELECT SCHOOL 
+            <select class="selectpicker" data-live-search="true">
+        <option data-tokens="">ABC</option>
+        <option data-tokens="">XYZ</option>
+        <option data-tokens="">MNO</option>
+      </select><br/>
+      SELECT GRADE
+            <select class="selectpicker" data-live-search="true">
+        <option data-tokens="">ABC</option>
+        <option data-tokens="">XYZ</option>
+        <option data-tokens="">MNO</option>
+      </select><br/>
+      SELECT SUBJECT
             <select class="selectpicker" data-live-search="true">
         <option data-tokens="">ABC</option>
         <option data-tokens="">XYZ</option>
@@ -218,56 +232,6 @@ The above copyright notice and this permission notice shall be included in all c
               <div class="card card-chart">
                 <div class="card-header card-header-danger">
                   <div class="ct-chart" id="completedTasksChart"></div>
-                </div>
-                <div class="card-body">
-                  <h4 class="card-title">Clicks By Grade</h4>
-                  <p class="card-category">Grades 1 to 5</p>
-                </div>
-                <div class="card-footer">
-                  <div class="stats">
-                    <i class="material-icons">access_time</i> Updated
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-            <div class="col-md-4">
-              <div class="card card-chart">
-                <div class="card-header card-header-success">
-                  <div class="ct-chart" id="dailySalesChart_v2"></div>
-                </div>
-                <div class="card-body">
-                  <h4 class="card-title">Daily Clicks</h4>
-                  <p class="card-category">
-                    <span class="text-success"><i class="fa fa-long-arrow-up"></i> 55% </span> increase in link clicks today.</p>
-                </div>
-                <div class="card-footer">
-                  <div class="stats">
-                    <i class="material-icons">access_time</i> updated 3 minutes ago
-                  </div>
-                </div>
-              </div>
-          </div>
-          <div class="col-md-4">
-              <div class="card card-chart">
-                <div class="card-header card-header-warning">
-                  <div class="ct-chart" id="websiteViewsChart_v2"></div>
-                </div>
-                <div class="card-body">
-                  <h4 class="card-title">Monthly Clicks</h4>
-                  <p class="card-category">Current Year</p>
-                </div>
-                <div class="card-footer">
-                  <div class="stats">
-                    <i class="material-icons">access_time</i> Updated 
-                  </div>
-                </div>
-              </div>
-            </div>
-                  <div class="col-md-4">
-              <div class="card card-chart">
-                <div class="card-header card-header-danger">
-                  <div class="ct-chart" id="completedTasksChart_v2"></div>
                 </div>
                 <div class="card-body">
                   <h4 class="card-title">Clicks By Grade</h4>
