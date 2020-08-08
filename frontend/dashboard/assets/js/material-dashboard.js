@@ -335,7 +335,9 @@ md = {
 
       var dailySalesChart = new Chartist.Line('#dailySalesChart', dataDailySalesChart, optionsDailySalesChart);
 
+      var dailySalesChart_v2 = new Chartist.Line('#dailySalesChart_v2', dataDailySalesChart, optionsDailySalesChart);
       md.startAnimationForLineChart(dailySalesChart);
+      md.startAnimationForLineChart(dailySalesChart_v2);
 
 
 
