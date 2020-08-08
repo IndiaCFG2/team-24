@@ -365,9 +365,11 @@ md = {
       }
 
       var completedTasksChart = new Chartist.Line('#completedTasksChart', dataCompletedTasksChart, optionsCompletedTasksChart);
-
+      
+      var completedTasksChart_v2 = new Chartist.Line('#completedTasksChart_v2',dataCompletedTasksChart,optionsCompletedTasksChart)
       // start animation for the Completed Tasks Chart - Line Chart
       md.startAnimationForLineChart(completedTasksChart);
+      md.startAnimationForLineChart(completedTasksChart_v2);
 
 
       /* ----------==========     Emails Subscription Chart initialization    ==========---------- */
@@ -403,9 +405,11 @@ md = {
         }]
       ];
       var websiteViewsChart = Chartist.Bar('#websiteViewsChart', dataWebsiteViewsChart, optionsWebsiteViewsChart, responsiveOptions);
-
+      
+      var websiteViewsChart_v2=Chartist.Bar('#websiteViewsChart_v2',dataWebsiteViewsChart, optionsWebsiteViewsChart, responsiveOptions)
       //start animation for the Emails Subscription Chart
       md.startAnimationForBarChart(websiteViewsChart);
+      md.startAnimationForBarChart(websiteViewsChart_v2);
     }
   },
 
