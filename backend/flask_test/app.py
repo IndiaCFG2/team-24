@@ -36,11 +36,19 @@ def getDailyForCurriculum():
 	rows = cur.fetchall()
 	return rows	
 
-@app.rote('.')
+@app.rote('/getMonthlyForCurriculum',methods = ['GET'])
 def getMonthlyForCurriculum():
+	board = request['board']
+	cur = con.cursor()
+	cur.execute("SELECT    from ")
+	rows = cur.fetchall()
+	return rows
 
-@app.route()...
+@app.route('getClicksForCurriculum',methods=['GET'])
 def getClicksForCurriculum():
+	board=['board']
+	cur=con.cursor()
+	cur.execute("SELEC")
 
 def getCityForCurriculum()
 
@@ -54,31 +62,67 @@ def getDailyForCurriculum():
 	rows = cur.fetchall()
 	return rows	
 
-@app.rote('.')
+@app.rote('/getMonthlyForCurriculum',methods=['GET'])
 def getMonthlyForCurriculum():
+	board = request['board']
+	cur = con.cursor()
+	cur.execute("SELECT Day_1, Day_2, Day_3, Day_4, Day_5, Day_6, Day_7 from school_level where Board = "+board)
+	rows = cur.fetchall()
+	return rows	
 
-@app.route()...
+@app.route('/getClicksForCurriculum',methods=['GET'])
 def getClicksForCurriculum():
+	board = request['board']
+	cur = con.cursor()
+	cur.execute("SELECT click from school_level where Board = "+board)
+	rows = cur.fetchall()
+	return rows	
 
-def getCityForCurriculum()
+@app.route('/getCityForCurriculum')
+def getCityForCurriculum():
+	board = request['board']
+	cur = con.cursor()
+	cur.execute("SELECT city from school_level where Board = "+board)
+	rows = cur.fetchall()
+	return rows	
 
-def getTechForCurriculum()
+
+@app.route('/getTechForCurriculum',methods=["GET"])
+def getTechForCurriculum():
+	board = request['board']
+	cur = con.cursor()
+	cur.execute("SELECT tech from school_level where Board = "+board)
+	rows = cur.fetchall()
+	return rows	
 
 
+@app.route('/getDailyForGrade',methods=["GET"])
 def getDailyForGrade():
 	curr = request['curriculum']
 	grade = request['grade']
+	cur=con.cursor()
+	cur.execute("SELECT Day_1, Day_2, Day_3, Day_4, Day_5, Day_6, Day_7 from school_level where Board = "+curr+"and grade="+grade)
+	rows = cur.fetchall()
+	return rows
 
-
+@app.route('/getDailyForGradeAndWeek',methods=["GET"])
 def getDailyForGradeAndWeek():
-	curr
-	grade
-	week
+	curr = request['curriculum']
+	grade = request['grade']
+	week = request['week']
+	cur=con.cursor()
+	cur.execute("SELECT Day_1, Day_2, Day_3, Day_4, Day_5, Day_6, Day_7 from school_level where Board = "+curr+"")
+	rows = cur.fetchall()
+	return rows
 
+@app.route('/getDailyforWeek',methods=["GET"])
 def getDailyforWeek():
-	curr
-	week
-
+	curr = request['curriculum']
+	week = request['week']
+	cur=con.cursor()
+	cur.execute("SELECT Day_1, Day_2, Day_3, Day_4, Day_5, Day_6, Day_7 from school_level where Board = "+curr+" and week ="+week)
+	rows = cur.fetchall()
+	return rows
 
 
 app.run(debug=True)
