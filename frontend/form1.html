@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<style>
+body {
+  font-family: 'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif!important;
+  background-image: url("inventory.jpg");
+}
+form {border: 3px solid #f1f1f1;}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 10px 20px;
+  margin: 3px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #e24c48;
+  color: white;
+  padding: 18px 20px;
+  margin: 10px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 10px;
+}
+
+span.psw {
+  width: auto;
+  padding: 10px 0px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+#box{
+  border: 1px solid #ccc;
+  /*color: white;*/
+  background-color: #fff;
+  margin-top: 3%;
+  border-radius: 10px;
+}
+</style>
+</head>
+<body>
+<div align="center">
+<div class="container" id="box" style="width:30%;">
+<div class="row" >
+<div class="col-md-12"><center><h2>SCHOOL DETAILS</h2></center></div>
+</div>
+
+<form method="post" align="center">
+  <div class="container">
+    <!-- <label for="fname"><b>Name</b></label>
+    <input type="text" placeholder="Enter Name" name="fname" required> -->
+
+    <div class="row">
+    <div class="col-md-6">
+    <label for="ename"><b>School Name</b></label>
+    <input type="text" placeholder="Enter name" name="ename" required>
+    </div>
+
+  <!--   <div class="col-md-6">
+    <label for="exid"><b>Executive id</b></label>
+    <input type="text" placeholder="executive id" name="exid" required>
+    </div> -->
+    </div>
+    
+    <div class="row">
+    <div class="col-md-6">
+    <label for="uname"><b>School Id</b></label>
+    <input type="text" placeholder="Enter Email" name="uname" required>
+    </div>
+
+    <!-- <div class="col-md-6">
+    <label for="phone"><b>Phone no.</b></label>
+    <input type="text" placeholder="Phone number" name="phone" required>
+    </div> -->
+    </div>
+
+
+    <!-- <label for="add"><b>Address</b></label>
+    <input type="text" placeholder="Address" name="add" >
+
+    
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="pswd" required> -->
+
+    <!-- <label for="type"><b>Type</b></label>
+    <input type="password" placeholder="Type" name="type" required> -->
+        
+    <button type="submit" name="login">REGISTER</button>
+  </div>
+
+</form>
+</div>
+</div>
+
+</body>
+</html>
