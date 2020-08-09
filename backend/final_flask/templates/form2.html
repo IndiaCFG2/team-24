@@ -1,0 +1,225 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
+
+    <title>CAPE by 321 Foundation</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/starter-template/">
+    <style>
+body {
+  font-family: 'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif!important;
+  background-image: url("inventory.jpg");
+}
+form {border: 3px solid #f1f1f1;}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 10px 20px;
+  margin: 3px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #e24c48;
+  color: white;
+  padding: 18px 20px;
+  margin: 10px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 10px;
+}
+
+span.psw {
+  width: auto;
+  padding: 10px 0px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+#box{
+  border: 1px solid #ccc;
+  /*color: white;*/
+  background-color: #fff;
+  margin-top: 3%;
+  border-radius: 10px;
+}
+</style>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <a class="navbar-brand" href="#">321 Foundation</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="{{ url_for('index') }}">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('admin') }}">Admin</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main role="main" class="container">
+      <br/><br/><br/>
+      <div align="center">
+<div class="container" id="box" style="width:60%;">
+<div class="row" >
+<div class="col-md-12"><center><h2>SCHOOL DETAILS</h2></center></div>
+</div>
+
+<form action = "{{ url_for('lessonData') }}" method="post" align="center">
+  <div class="container">
+    <!-- <label for="fname"><b>Name</b></label>
+    <input type="text" placeholder="Enter Name" name="fname" required> -->
+
+    <label for="sid"><b>School ID</b></label>
+    <input type="text" placeholder="Enter ID" name="sid" required>
+
+  <!--   <div class="col-md-6">
+    <label for="exid"><b>Executive id</b></label>
+    <input type="text" placeholder="executive id" name="exid" required>
+    </div> -->
+    </div>
+    <br/>
+        <input name="tech" value="Low Tech" type="radio" align="left">Low Tech<br/>
+    <input name="tech" value="High Tech" type="radio"align="right">High Tech
+    <div class="row">
+    <br/>
+    <!-- <div class="col-md-6">
+    
+    </div> -->
+    </div>
+    <br/>
+     <div class="row">
+    <div class="col-md-6">
+  <label for="grade">Choose a grade:</label>
+  <select id="grade" name="grade">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+  </select>
+    </div>
+    <br/>
+
+    <div class="col-md-6">
+      <label for="Subject">Choose a subject:</label>
+  <select id="subject" name="subject">
+    <option value="1">English</option>
+    <option value="2">Maths</option>
+    <option value="3">EVS</option>
+  </select>
+  <br/>
+    
+    </div>
+    </div>
+<br/><br/>
+     <div class="row">
+    <div class="col-md-6">
+  <label for="week">Choose a week:</label>
+  <select id="week" name="week">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="8">8</option>
+    <option value="9">9</option>
+    <option value="10">10</option>
+  </select>
+    </div>
+<br/><br/>
+    <div class="col-md-6">
+      <label for="day">Choose a day:</label>
+  <select id="day" name="day">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+  </select>
+    
+    </div>
+    </div>
+
+
+  <br/><br/>
+    <textarea name="url" placeholder="Enter URL here"></textarea>
+
+    
+
+   <!--  <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="pswd" required> -->
+
+    <!-- <label for="type"><b>Type</b></label>
+    <input type="password" placeholder="Type" name="type" required> -->
+        
+    <button type="submit" name="login">REGISTER</button>
+  </div>
+
+</form>
+</div>
+</div>
+    </main><!-- /.container -->
+    <script src = "index.js"> </script>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <!--<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>-->
+
+  </body>
+</html>

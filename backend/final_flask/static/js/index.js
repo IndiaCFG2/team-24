@@ -1,0 +1,52 @@
+func = (url) => {
+	var params = {};
+	var parser = document.createElement('a');
+	parser.href = url;
+	var query = parser.search.substring(1);
+	var vars = query.split('&');
+	for (var i = 0; i < vars.length; i++) {
+		var pair = vars[i].split('=');
+		params[pair[0]] = decodeURIComponent(pair[1]);
+	}
+	// pass schoolid to database, get curriculum var
+	// for now for testing index.html?schoolid=CBSE etc
+	getCurr(params.sid).then(res => {
+		console.log(res);
+		console.log(res[0][0]);
+		if (res[0][0] === 'CBSE') {
+		document.getElementById('CBSE').style.display = "block";
+		document.getElementById("But1").onclick = function() {
+	document.location.href = 'http://127.0.0.1:5000/week' + document.location.search + '&subj=E' + '&gr=1';
+}
+	}
+	else if (res[0][0] === 'KA') {
+		document.getElementById('KTAKA').style.display = "block";
+	}
+	else if (res[0][0] === 'TS') {
+		document.getElementById('TS').style.display = "block";
+	}
+	else if(res[0][0] === 'MH') {
+		document.getElementById('MAHA').style.display = "block";
+	}
+	else {
+		console.log('err');
+	}
+	});
+}
+
+async function getCurr(id) { 
+	  let response = await fetch('/getCurr', {
+            method: 'POST',
+            body: JSON.stringify({'sid': id})
+        }); 
+
+	  if (response.status == 200) {
+	    let json = await response.json();
+	    return json['data'];
+	  }
+
+	  throw new Error(response.status);
+}
+
+
+window.onload = func(document.location.search);
