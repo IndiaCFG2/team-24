@@ -91,14 +91,18 @@ def schoolData():
 
 @app.route('/getCurr', methods=["GET", "POST"])
 def getCurr():
-	data = json.loads(request.data)
-	sid = data['sid']
-	con = sqlite3.connect("chart1.db")  
-	cur = con.cursor()
-	cur.execute("SELECT Curriculum FROM schoolData WHERE \"School ID\" = ?", [sid])
-	rows = cur.fetchall()
-	print(rows)
-	return jsonify({'data': rows})
+	try:
+		data = json.loads(request.data)
+		sid = data['sid']
+		con = sqlite3.connect("chart1.db")  
+		cur = con.cursor()
+		cur.execute("SELECT Curriculum FROM schoolData WHERE \"School ID\" = ?", [sid])
+		rows = cur.fetchall()
+		print(rows)
+		return jsonify({'data': rows})
+	except:
+		return jsonify({'data': ''})
+
 
 @app.route('/lessonData', methods = ["GET", "POST"])
 def lessonData():
