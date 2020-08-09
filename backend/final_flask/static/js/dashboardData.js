@@ -1,17 +1,18 @@
 // create functions for each filter (school, curriculum, grade etc)
 curricul = (curr) => {
-	// UPDATE CHART 1
-	getNumberOfActive(curr).then(res => {
-			document.getElementById('school-part').innerHTML = res;
-	});
-	updateDailyChart(curr);
-	updateMonthlyChart(curr);
-	updateGradeChart(curr);
-	updateTechChart(curr);
-	updateCityChart(curr);
-	document.getElementById('school-part-curr').innerHTML = "CBSE";
-	document.getElementById('clicks-24').innerHTML = Math.floor(Math.random() * 1000);
-	schoolSelect(curr);
+  // UPDATE CHART 1
+  getNumberOfActive(curr).then(res => {
+      document.getElementById('school-part').innerHTML = res;
+  });
+  updateDailyChart(curr);
+  updateMonthlyChart(curr);
+  updateGradeChart(curr);
+  updateTechChart(curr);
+  updateCityChart(curr);
+  updateYearChart();
+  document.getElementById('school-part-curr').innerHTML = "CBSE";
+  document.getElementById('clicks-24').innerHTML = Math.floor(Math.random() * 1000);
+  schoolSelect(curr);
 }
 
 document.getElementById('select-school-button').onclick = (school) => {
@@ -19,135 +20,135 @@ document.getElementById('select-school-button').onclick = (school) => {
 }
 
 async function schoolSelect(curr) {
-	console.log("why?");
-	var select =  document.getElementById('school-select');
-	while ( select.childNodes.length >= 1 )
-	{
+  console.log("why?");
+  var select =  document.getElementById('school-select');
+  while ( select.childNodes.length >= 1 )
+  {
      select.removeChild(select.firstChild);       
-	}
-	getNamesOfSchools(curr).then(res => {
-		for (var v in res) {
-		newOption = document.createElement('option');
-    	newOption.value=res[v];
-    	newOption.text=res[v];
-    	 select.appendChild(newOption);
-	}
-	document.getElementById('selected-school').innerHTML = res[0];
+  }
+  getNamesOfSchools(curr).then(res => {
+    for (var v in res) {
+    newOption = document.createElement('option');
+      newOption.value=res[v];
+      newOption.text=res[v];
+       select.appendChild(newOption);
+  }
+  document.getElementById('selected-school').innerHTML = res[0];
 });
 }
 
 
 async function getNamesOfSchools(board) { 
-	  let response = await fetch('/getNamesOfSchools', {
+    let response = await fetch('/getNamesOfSchools', {
             method: 'POST',
             body: JSON.stringify({'board': board})
         }); 
 
-	  if (response.status == 200) {
-	    let json = await response.json();
-	    return json['data'];
-	  }
+    if (response.status == 200) {
+      let json = await response.json();
+      return json['data'];
+    }
 
-	  throw new Error(response.status);
+    throw new Error(response.status);
 }
 
 
 
 async function getNumberOfActive(board) { 
-	  let response = await fetch('/getNumberOfActive', {
+    let response = await fetch('/getNumberOfActive', {
             method: 'POST',
             body: JSON.stringify({'board': board})
         }); 
 
-	  if (response.status == 200) {
-	    let json = await response.json();
-	    return json['data'];
-	  }
+    if (response.status == 200) {
+      let json = await response.json();
+      return json['data'];
+    }
 
-	  throw new Error(response.status);
+    throw new Error(response.status);
 }
 
 
 async function getTechForCurriculum(board) { 
-		console.log(board);
-	  let response = await fetch('/getTechForCurriculum', {
+    console.log(board);
+    let response = await fetch('/getTechForCurriculum', {
             method: 'POST',
             body: JSON.stringify({'board': board})
         }); 
 
-	  if (response.status == 200) {
-	    let json = await response.json();
-	    console.log(json['data']); 
-	    return json['data'];
-	  }
+    if (response.status == 200) {
+      let json = await response.json();
+      console.log(json['data']); 
+      return json['data'];
+    }
 
-	  throw new Error(response.status);
+    throw new Error(response.status);
 }
 
 
 async function getDailyForCurriculum(board) { 
 
-	  let response = await fetch('/getDailyForCurriculum', {
+    let response = await fetch('/getDailyForCurriculum', {
             method: 'POST',
             body: JSON.stringify({'board': board})
         }); 
 
-	  if (response.status == 200) {
-	    let json = await response.json();
+    if (response.status == 200) {
+      let json = await response.json();
 
-	    return json['data'];
-	  }
+      return json['data'];
+    }
 
-	  throw new Error(response.status);
+    throw new Error(response.status);
 }
 
 
 async function getMonthlyForCurriculum(board) { 
-	  let response = await fetch('/getMonthlyForCurriculum', {
+    let response = await fetch('/getMonthlyForCurriculum', {
             method: 'POST',
             body: JSON.stringify({'board': board})
         }); 
 
-	  if (response.status == 200) {
-	    let json = await response.json();
-	    return json['data'];
-	  }
+    if (response.status == 200) {
+      let json = await response.json();
+      return json['data'];
+    }
 
-	  throw new Error(response.status);
+    throw new Error(response.status);
 }
 
 async function getGradeForCurriculum(board) { 
-	  let response = await fetch('/getGradeForCurriculum', {
+    let response = await fetch('/getGradeForCurriculum', {
             method: 'POST',
             body: JSON.stringify({'board': board})
         }); 
 
-	  if (response.status == 200) {
-	    let json = await response.json();
-	    return json['data'];
-	  }
+    if (response.status == 200) {
+      let json = await response.json();
+      return json['data'];
+    }
 
-	  throw new Error(response.status);
+    throw new Error(response.status);
 }
 
 async function getCityForCurriculum(board) { 
-	  let response = await fetch('/getCityForCurriculum', {
+    let response = await fetch('/getCityForCurriculum', {
             method: 'POST',
             body: JSON.stringify({'board': board})
         }); 
 
-	  if (response.status == 200) {
-	    let json = await response.json();
-	    return json['data'];
-	  }
+    if (response.status == 200) {
+      let json = await response.json();
+      return json['data'];
+    }
 
-	  throw new Error(response.status);
+    throw new Error(response.status);
 }
 
 
 updateDailyChart = (data) => {
-	getDailyForCurriculum(data).then(res => {
-	dataDailyClicksChart = {
+  getDailyForCurriculum(data).then(res => {
+  dataDailyClicksChart = {
         labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
         series: res
       };
@@ -173,8 +174,8 @@ updateDailyChart = (data) => {
 }
 
 updateMonthlyChart = (data) => {
-	getMonthlyForCurriculum(data).then(res => {
-		var dataWebsiteViewsChart = {
+  getMonthlyForCurriculum(data).then(res => {
+    var dataWebsiteViewsChart = {
         labels: ['J', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D'],
         series: 
           res
@@ -210,8 +211,8 @@ updateMonthlyChart = (data) => {
 }
 
 updateGradeChart = (data) => {
-	getGradeForCurriculum(data).then(res => { 
-		dataCompletedTasksChart = {
+  getGradeForCurriculum(data).then(res => { 
+    dataCompletedTasksChart = {
         labels: ['G1', 'G2', 'G3', 'G4', 'G5'],
         series: res
       };
@@ -235,13 +236,13 @@ updateGradeChart = (data) => {
       // start animation for the Completed Tasks Chart - 
             md.startAnimationForLineChart(completedTasksChart);
 
-	});
+  });
 }
 
 
 updateTechChart = (data) => {
-	getTechForCurriculum(data).then(res => {
-	dataDailyClicksChart = { 
+  getTechForCurriculum(data).then(res => {
+  dataDailyClicksChart = { 
         labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
         series: [res['low'][0], res['high'][0]]
       };
@@ -268,10 +269,38 @@ updateTechChart = (data) => {
 });
 }
 
+updateYearChart = () => {
+  dataYearChart = { 
+        labels: [2016, 2017, 2018, 2019, 2020],
+        series: [
+        [ 34, 72, 96, 169, 227 ]
+       ]
+      };
+
+      optionsYearChart = {
+        lineSmooth: Chartist.Interpolation.cardinal({
+          tension: 0
+        }),
+        low: 0,
+        high: 300, 
+        chartPadding: {
+          top: 0,
+          right: 0,
+          bottom: 0,
+          left: 0
+        },
+      }
+
+
+
+      var yearChart = new Chartist.Line('#yearChart', dataYearChart, optionsYearChart);
+      md.startAnimationForLineChart(yearChart);
+}
+
 updateCityChart = (data) => {
-	getCityForCurriculum(data).then(res => {
-		console.log("city");
-		console.log(res);
+  getCityForCurriculum(data).then(res => {
+    console.log("city");
+    console.log(res);
 
 var data = {
   labels: res['labels'],
@@ -281,7 +310,7 @@ var data = {
 var sum = function(a, b) { return a + b };
 
 var options = {
-	lineSmooth: Chartist.Interpolation.cardinal({
+  lineSmooth: Chartist.Interpolation.cardinal({
           tension: 0
         }),
         low: 0,
@@ -306,6 +335,6 @@ var responsiveOptions = [
   }]
 ];
 
-		var dailyClicksChart = new Chartist.Pie('#cityChart', data, options, responsiveOptions);
+    var dailyClicksChart = new Chartist.Pie('#cityChart', data, options, responsiveOptions);
 });
 }
